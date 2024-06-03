@@ -4,15 +4,22 @@ import 'Widgets/AddNoteBottomSheet.dart';
 
 
 class NotesView extends StatelessWidget {
-  static String id = "NotesView";
   const NotesView({super.key});
+
+  static String id = "NotesView";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton:FloatingActionButton(
       onPressed: (){
-        showModalBottomSheet(context: context, builder: (context){
+        showModalBottomSheet(
+          backgroundColor: Color.fromARGB(255, 41, 27, 22),
+          shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          context: context,
+            builder: (context){
           return const AddNoteBottomSheet();
         });
       },
