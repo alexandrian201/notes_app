@@ -24,7 +24,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
-caps(text,{font,color,radius,width}){
+caps(text,{font,color,textColor,radius,width}){
 return Container(
                   height:60,
                   width:width,
@@ -33,7 +33,7 @@ return Container(
                   ,borderRadius: BorderRadius.circular(radius??8)),
                   child: Center(
                     child: Text(text,style: TextStyle(
-                      color:Colors.white,fontSize: font??20,fontWeight: FontWeight.bold),)),
+                      color:textColor??Colors.white,fontSize: font??20,fontWeight: FontWeight.bold),)),
                 );}
 
 
@@ -188,17 +188,18 @@ Widget customTextField({BuildContext?context,
 TextEditingController ? controller,
 IconButton? suffixIcon,
 Icon? prefixIcon,
-String? hint,
-double radius=8,
-double hintSize=16,
-dynamic kind=TextInputType.name,
-dynamic fillColor,
-dynamic crusorColor,
-dynamic focusedColor,
-dynamic borderColor,
-dynamic hintColor,
-String? label,
-double boxHeight=65,
+final String? hint,
+final double radius=8,
+final double hintSize=16,
+final dynamic kind=TextInputType.name,
+final dynamic fillColor,
+final dynamic crusorColor,
+final dynamic focusedColor,
+final dynamic borderColor,
+final dynamic hintColor,
+final String? label,
+final int maxLines=1,
+final double boxHeight=70,
 bool obsecure=false,
 // required String? Function(String?)? validator,
 Function(String)? onChanged,
@@ -206,7 +207,7 @@ Function(String)? onChanged,
 }) {
     return
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:10),
+                padding: const EdgeInsets.symmetric(vertical:5),
                 child:
                   SizedBox(
                   // width: 370,
@@ -214,7 +215,7 @@ Function(String)? onChanged,
                   child: TextFormField(
                     textDirection:TextDirection.ltr,
                     // maxLength: ,
-                    // maxLines: 3,
+                    maxLines:maxLines,
                     // bool obscure Text=false,
                     cursorColor:crusorColor ??const Color(0xff4fc3f7),
                     keyboardType: kind,
