@@ -11,7 +11,9 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton:FloatingActionButton(
+
+      body: const NotesViewBody(),
+            floatingActionButton:FloatingActionButton(
       onPressed: (){
         showModalBottomSheet(
           backgroundColor: Color.fromARGB(255, 41, 27, 22),
@@ -27,7 +29,6 @@ class NotesView extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 2, 253, 198),
       hoverColor: Colors.amber,
       child:const Icon(color: Colors.black,size:50,Icons.add),) ,
-      body: const NotesViewBody(),
     );
   }
 }
