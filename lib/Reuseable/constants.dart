@@ -7,5 +7,6 @@ const kLogo ="assets/free.png";
 const kMessage ="message";
 const kId ="id";
 const kCreatedAt='createdAt';
+const kNotesBox ='notes_box';
 
 
