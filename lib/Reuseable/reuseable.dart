@@ -24,8 +24,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
-caps(text,{font,color,textColor,radius,width}){
-return Container(
+caps(text,{font,color,textColor,radius,width,ontap}){
+return GestureDetector(
+  onTap:ontap,
+  child: Container(
                   height:60,
                   width:width,
                   decoration: BoxDecoration(
@@ -34,7 +36,9 @@ return Container(
                   child: Center(
                     child: Text(text,style: TextStyle(
                       color:textColor??Colors.white,fontSize: font??20,fontWeight: FontWeight.bold),)),
-                );}
+                ),
+)
+;}
 
 
 class button extends StatelessWidget {
